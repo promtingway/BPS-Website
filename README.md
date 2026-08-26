@@ -4,14 +4,18 @@ Production-ready landing page for BPS, an independent industrial sourcing and su
 
 ## Run locally
 
-Use Node.js 22.13 or newer.
+Use Node.js 22 and pnpm 11.19.0 (both are pinned by the repository).
 
 ```bash
-npm install
-npm run dev
+pnpm install --frozen-lockfile
+pnpm dev
 ```
 
-Open the local address shown in the terminal. Create a production build with `npm run build` and check code quality with `npm run lint`.
+Open the local address shown in the terminal. Create a production build with `pnpm build`, check types with `pnpm typecheck`, and check code quality with `pnpm lint`.
+
+## Netlify
+
+Netlify builds the standard Next.js application with `pnpm build` and publishes the `.next` output through Netlify's automatically managed OpenNext adapter. The repository does not install or configure the legacy `@netlify/plugin-nextjs` package manually. Runtime secrets must be configured in Netlify's environment-variable settings and must never be committed.
 
 ## Edit the site
 
